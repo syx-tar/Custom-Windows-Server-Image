@@ -43,6 +43,14 @@ Tinggal ditunggu hingga selesai.
 
 ### Download via browser:
 
+Kompress Windows Server Img kalian
+
+```bash
+dd if=windows2xxx.img | gzip -c>windows2xxx.gz
+```
+
+Link untuk download
+
 ```id="t6cbv1"
 http://IP_VPS:3923/windows2xxx.gz
 ```

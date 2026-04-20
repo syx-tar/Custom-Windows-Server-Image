@@ -60,7 +60,7 @@ echo "Selected: $img_file"
 
 # Input RAM dengan peringatan
 echo ""
-echo "⚠️  PERINGATAN:"
+echo "PERINGATAN:"
 echo "Gunakan RAM secukupnya, jangan menggunakan seluruh RAM VPS."
 echo "Disarankan sisakan minimal 1–2 GB untuk OS agar tidak crash."
 echo ""
@@ -120,7 +120,7 @@ fi
 tmux new-session -d -s qemu_vm "$CMD"
 
 echo ""
-echo "✅ VM berhasil dijalankan!"
+echo "VM berhasil dijalankan!"
 echo "Session tmux:"
 echo "- copyparty  : tmux attach -t windows"
 echo "- VM Windows : tmux attach -t qemu_vm"

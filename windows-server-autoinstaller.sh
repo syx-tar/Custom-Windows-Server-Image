@@ -6,6 +6,7 @@ display_menu() {
     echo "1. Windows Server 2016"
     echo "2. Windows Server 2019"
     echo "3. Windows Server 2022"
+    echo "4. Windows Server 2025"
     read -p "Enter your choice: " choice
 }
 
@@ -13,11 +14,7 @@ display_menu() {
 apt-get update && apt-get upgrade -y
 
 # Install QEMU and its utilities
-apt-get install qemu -y
-apt install qemu-utils -y
-apt install qemu-system-x86-xen -y
-apt install qemu-system-x86 -y
-apt install qemu-kvm -y
+apt-get install qemu qemu-utils qemu-system-x86-xen qemu-system-x86 qemu-kvm -y
 
 echo "QEMU installation completed successfully."
 
@@ -43,6 +40,12 @@ case $choice in
         iso_link="https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US"
         iso_file="windows2022.iso"
         ;;
+    4)
+        # Windows Server 2025
+        img_file="windows2025.img"
+        iso_link="https://go.microsoft.com/fwlink/p/?linkid=2293312&clcid=0x409&culture=en-us&country=US"
+        iso_file="windows2025.iso"
+        ;;
     *)
         echo "Invalid choice. Exiting."
         exit 1
@@ -57,7 +60,7 @@ qemu-img create -f raw "$img_file" 30G
 echo "Image file $img_file created successfully."
 
 # Download Virtio driver ISO
-wget -O virtio-win.iso 'https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.215-1/virtio-win-0.1.215.iso'
+wget -O virtio-win.iso 'https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.285-1/virtio-win-0.1.285.iso'
 
 echo "Virtio driver ISO downloaded successfully."
 

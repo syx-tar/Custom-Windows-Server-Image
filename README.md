@@ -88,7 +88,7 @@ Proses upload dan extract membutuhkan waktu.
 Gunakan perintah berikut:
 
 ```bash id="p9r6c2"
-curl -L [http://168.144.81.209:3923/GSWin11_Pro.gz](http://IP_VPS:3923/windows2xxx.gz) | gunzip | dd of=/dev/vda bs=1M status=progress
+curl -L http://IP_VPS:3923/windows2xxx.gz | gunzip | dd of=/dev/vda bs=1M status=progress
 ```
 
 Atau ikuti tutorial video:
